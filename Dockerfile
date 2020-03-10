@@ -1,5 +1,4 @@
-FROM marthoc/deconz:latest
-LABEL maintainer="Peter Foreman <peter@frmn.nl>"
+FROM koenkk/zigbee2mqtt:latest
 
 # Install socat
 RUN apt-get update && apt-get -y install socat
