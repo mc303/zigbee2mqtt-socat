@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-if [[ -z "${SOCAT_DECONZ_TYPE}" ]]; then
-  SOCAT_DECONZ_TYPE="tcp"
+if [[ -z "${SOCAT_ZIGBEE2MQTT_TYPE}" ]]; then
+  SOCAT_ZIGBEE2MQTT_TYPE="tcp"
 fi
-if [[ -z "${SOCAT_DECONZ_LOG}" ]]; then
-  SOCAT_DECONZ_LOG="-lf \"$SOCAT_DECONZ_LOG\""
+if [[ -z "${SOCAT_ZIGBEE2MQTT_LOG}" ]]; then
+  SOCAT_ZIGBEE2MQTT_LOG="-lf \"$SOCAT_ZIGBEE2MQTT_LOG\""
 fi
-if [[ -z "${SOCAT_DECONZ_LINK}" ]]; then
-  SOCAT_DECONZ_LINK="/dev/deconz"
+if [[ -z "${SOCAT_ZIGBEE2MQTT_LINK}" ]]; then
+  SOCAT_ZIGBEE2MQTT_LINK="/dev/zigbee"
 fi
 
 BINARY="socat"
-PARAMS="$INT_SOCAT_LOG-d pty,link=$SOCAT_DECONZ_LINK,raw,user=root,mode=777 $SOCAT_DECONZ_TYPE:$SOCAT_DECONZ_HOST:$SOCAT_DECONZ_PORT"
+PARAMS="$INT_ZIGBEE2MQTT_LOG-d pty,link=$SOCAT_ZIGBEE2MQTT_LINK,raw,user=root,mode=777 $SOCAT_ZIGBEE2MQTT_TYPE:$SOCAT_ZIGBEE2MQTT_HOST:$SOCAT_ZIGBEE2MQTT_PORT"
 
 ######################################################
 
@@ -37,7 +37,7 @@ is-running)
     fi
     # stop deconz if socat is not running 
     if pgrep -f "start.sh" >/dev/null 2>&1 ; then
-        echo "stopping deconz since socat is not running"
+        echo "stopping zigbee2mqtt since socat is not running"
         kill -9 $(pgrep -f "start.sh")
     fi
     exit 0
