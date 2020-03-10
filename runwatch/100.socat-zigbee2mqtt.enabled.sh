@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-if [[ -z "${SOCAT_ZIGBEE2MQTT_TYPE}" ]]; then
-  SOCAT_ZIGBEE2MQTT_TYPE="tcp"
+if [[ -z "${SOCAT_ZIGBEE_TYPE}" ]]; then
+  SOCAT_ZIGBEE_TYPE="tcp"
 fi
-if [[ -z "${SOCAT_ZIGBEE2MQTT_LOG}" ]]; then
-  SOCAT_ZIGBEE2MQTT_LOG="-lf \"$SOCAT_ZIGBEE2MQTT_LOG\""
+if [[ -z "${SOCAT_ZIGBEE_LOG}" ]]; then
+  SOCAT_ZIGBEE_LOG="-lf \"$SOCAT_ZIGBEE_LOG\""
 fi
-if [[ -z "${SOCAT_ZIGBEE2MQTT_LINK}" ]]; then
-  SOCAT_ZIGBEE2MQTT_LINK="/dev/zigbee"
+if [[ -z "${SOCAT_ZIGBEE_LINK}" ]]; then
+  SOCAT_ZIGBEE_LINK="/dev/zigbee"
 fi
 
 BINARY="socat"
-PARAMS="$INT_ZIGBEE2MQTT_LOG-d pty,link=$SOCAT_ZIGBEE2MQTT_LINK,raw,user=root,mode=777 $SOCAT_ZIGBEE2MQTT_TYPE:$SOCAT_ZIGBEE2MQTT_HOST:$SOCAT_ZIGBEE2MQTT_PORT"
+PARAMS="$INT_SOCAT_LOG-d pty,link=$SOCAT_ZIGBEE_LINK,raw,user=root,mode=777 $SOCAT_ZIGBEE_TYPE:$SOCAT_ZIGBEE_HOST:$SOCAT_ZIGBEE_PORT"
 
 ######################################################
 
@@ -35,10 +35,10 @@ is-running)
     if pgrep -f "$BINARY $PARAMS" >/dev/null 2>&1 ; then
         exit 1
     fi
-    # stop deconz if socat is not running 
-    if pgrep -f "start.sh" >/dev/null 2>&1 ; then
+    # stop zigbee2mqtt if socat is not running
+    if pgrep -f "node index.js" >/dev/null 2>&1 ; then
         echo "stopping zigbee2mqtt since socat is not running"
-        kill -9 $(pgrep -f "start.sh")
+        kill -9 $(pgrep -f "node index.js")
     fi
     exit 0
     ;;
