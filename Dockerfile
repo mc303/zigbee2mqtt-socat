@@ -11,5 +11,5 @@ COPY runwatch/100.socat-deconz.enabled.sh /runwatch/100.socat-deconz.enabled.sh
 COPY runwatch/200.deconz.enabled.sh /runwatch/200.deconz.enabled.sh
 RUN chmod 777 /runwatch/*.sh
 
-ENTRYPOINT [ "/tini", "--", "/runwatch/run.sh" ]
+ENTRYPOINT [ "/sbin/tini", "--", "/runwatch/run.sh" ]
 
