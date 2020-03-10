@@ -1,4 +1,4 @@
-# zigbee2mqtt with socat for remote zwave
+# zigbee2mqtt with socat for remote zigbee
 
 changed from deconz-socat to zigbee2mqtt-socat and changed to latest branch fork from [deconz-socat](https://github.com/peterforeman/deconz-socat)
 
