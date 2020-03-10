@@ -1,7 +1,7 @@
 FROM koenkk/zigbee2mqtt:latest
 
 # Install socat
-RUN apk add --no-cache --virtual tini socat bash
+RUN apk add --no-cache --virtual musl tini socat bash
 
 RUN mkdir /runwatch
 COPY runwatch/run.sh /runwatch/run.sh
