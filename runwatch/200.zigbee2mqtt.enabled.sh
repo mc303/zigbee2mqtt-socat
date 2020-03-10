@@ -52,3 +52,5 @@ stop)
     cd /app
     kill -9 $(pgrep -f "$BINARY")
     ;;
+
+esac
