@@ -64,4 +64,3 @@ do
         fi
     done
     sleep $CONFIG_PAUSE_BETWEEN_CHECKS
-done
