@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-BINARY="/start.sh"
-PARAMS=""
+BINARY="npm"
+PARAMS="start"
 
 ######################################################
 
@@ -22,7 +22,7 @@ describe)
 ## exit 0 = is not running
 ## exit 1 = is running
 is-running)
-    if pgrep -f "start.sh" >/dev/null 2>&1 ; then
+    if pgrep -f "node index.js" >/dev/null 2>&1 ; then
         exit 1
     fi
     exit 0
@@ -38,7 +38,7 @@ start)
         exit 0
     else
         # socat is not running
-        echo "##### Socat is not running, skipping start of deconz"
+        echo "##### Socat is not running, skipping start of zigbee2mqtt"
         exit 1
     fi
     ;;
@@ -52,5 +52,3 @@ stop)
     cd /app
     kill -9 $(pgrep -f "$BINARY")
     ;;
-
-esac
