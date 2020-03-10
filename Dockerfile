@@ -1,7 +1,7 @@
 FROM koenkk/zigbee2mqtt:latest
 
 # Install socat
-RUN apt-get update && apt-get -y install socat
+RUN apk add --no-cache --virtual socat
 
 RUN mkdir /runwatch
 COPY runwatch/run.sh /runwatch/run.sh
