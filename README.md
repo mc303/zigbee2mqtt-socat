@@ -1,5 +1,7 @@
 # zigbee2mqtt with socat for remote zwave
 
+changed from deconz-socat to zigbee2mqtt-socat and changed to latest branch fork from [deconz-socat](https://github.com/peterforeman/deconz-socat)
+
 Instead of using a locally-connected zigbee device (usbstick/CC2531), we can use a serial device mapped over the network with ser2net or socat and then map it to a local zwave serial device with socat.
 
 Please [report issues on github](https://github.com/peterforeman/zigbee2mqtt-socat/issues).
