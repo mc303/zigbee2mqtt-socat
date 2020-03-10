@@ -11,7 +11,7 @@ if [[ -z "${SOCAT_ZIGBEE_LINK}" ]]; then
 fi
 
 BINARY="socat"
-PARAMS="$INT_SOCAT_LOG-d pty,link=$SOCAT_ZIGBEE_LINK,raw,echo=0 $SOCAT_ZIGBEE_TYPE:$SOCAT_ZIGBEE_HOST:$SOCAT_ZIGBEE_PORT"
+PARAMS="$INT_SOCAT_LOG-d pty,raw,echo=0,link=$SOCAT_ZIGBEE_LINK $SOCAT_ZIGBEE_TYPE:$SOCAT_ZIGBEE_HOST:$SOCAT_ZIGBEE_PORT"
 
 ######################################################
 
