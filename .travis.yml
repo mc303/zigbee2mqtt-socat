@@ -4,6 +4,7 @@ env:
   global:
     - DOCKER_REPO=mc303/zigbee2mqtt-socat 
 before_install:
+  - apt-get remove -y docker docker-engine docker.io containerd runc docker-compose
   - curl -fsSL https://get.docker.com | sh
   - echo '{"experimental":"enabled"}' | sudo tee /etc/docker/daemon.json
   - mkdir -p $HOME/.docker
