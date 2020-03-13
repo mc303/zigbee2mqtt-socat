@@ -12,6 +12,6 @@ TAG="${TRAVIS_TAG:-latest}"
 docker buildx build \
      --progress plain \
     --platform=linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 \
-    -t $DOCKER_REPO:$TAG \
+    -t $DOCKER_REPO:latest \
     --push \
     .
