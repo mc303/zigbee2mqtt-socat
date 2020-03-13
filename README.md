@@ -81,6 +81,7 @@ Alias=zigbee.service
 ```
 
 ## Acknowledgements
+based on [peterforeman-deconz-socat](https://hub.docker.com/r/peterforeman/deconz-socat) image [published on docker hub](https://hub.docker.com/r/peterforeman/deconz-socat).
 
 Based on [koenkk-zigbee2mqtt](https://hub.docker.com/r/koenkk/zigbee2mqtt/) image, [published on docker hub](https://hub.docker.com/r/koenkk/zigbee2mqtt).
 
