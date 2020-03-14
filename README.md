@@ -4,7 +4,7 @@ changed from deconz-socat to zigbee2mqtt-socat and changed to latest branch fork
 
 Instead of using a locally-connected zigbee device (usbstick/CC2531), we can use a serial device mapped over the network with ser2net or socat and then map it to a local zwave serial device with socat.
 
-Please [report issues on github](https://github.com/peterforeman/zigbee2mqtt-socat/issues).
+Please [report issues on github](https://github.com/mc303/zigbee2mqtt-socat/issues).
 
 ## Getting Started
 
@@ -86,4 +86,4 @@ based on [peterforeman-deconz-socat](https://hub.docker.com/r/peterforeman/decon
 Based on [koenkk-zigbee2mqtt](https://hub.docker.com/r/koenkk/zigbee2mqtt/) image, [published on docker hub](https://hub.docker.com/r/koenkk/zigbee2mqtt).
 
 Based on [vladbabii/homeassistant-socat](https://hub.docker.com/r/vladbabii/homeassistant-socat).
-# deconz-socat
+# zigbee2mqtt
