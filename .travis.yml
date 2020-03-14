@@ -13,4 +13,4 @@ install:
   - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
   - docker buildx create --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 --name buildzigbee2mqtt
   - docker buildx use buildzigbee2mqtt
-script: bash ci.sh
+script: bash travis/ci.sh
