@@ -21,5 +21,6 @@ if [[ -z "${CONFIG_LOG_TARGET}" ]]; then
 else
   LOG_FILE="${CONFIG_LOG_TARGET}"
 fi
+
 echo "starting... socat $PARAMS"
 exec socat $PARAMS &
