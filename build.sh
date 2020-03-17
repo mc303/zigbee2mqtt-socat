@@ -1,5 +1,5 @@
 #!/bin/sh
-DOCKER_REPO='mc303/zigbee2mqtt-socat-v2:dev'
+DOCKER_REPO='mc303/zigbee2mqtt-socat:dev'
 BUIILDX_REPO='buildzigbee2mqttsocat'
 
 #env DOCKER_BUILDKIT=1 
