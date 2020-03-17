@@ -1,0 +1,14 @@
+version: '2'
+services:
+    zigbee2mqtt:
+      container_name: zigbee2mqtt
+      image:  mc303/zigbee2mqtt-socat-v2:latest
+      restart: unless-stopped   
+      volumes:
+        - /home/daniel/docker/data/zigbee2mqtt/data:/app/data
+      environment:
+        - TZ=Europe/Amsterdam     
+        - SOCAT_ZIGBEE_TYPE=tcp
+        - SOCAT_ZIGBEE_HOST=10.11.7.105
+        - SOCAT_ZIGBEE_PORT=20108
+        - SOCAT_ZIGBEE_LINK=/dev/zigbee

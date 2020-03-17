@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+#####################################################
+
+# CMD=$1
+cd /app
+
+
+
+exec npm start &
