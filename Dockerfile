@@ -3,8 +3,6 @@ FROM koenkk/zigbee2mqtt:latest as base
 ARG TARGETPLATFORM
 RUN echo "TARGETPLATFORM : $TARGETPLATFORM"
 
-SHELL ["/bin/ash", "-o", "pipefail", "-c"]
-
 # Install socat
 RUN \
     apk add --no-cache --virtual .build-dependencies \
