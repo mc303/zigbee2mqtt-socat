@@ -12,7 +12,7 @@ RUN \
     && apk add --no-cache \
         socat \
         bash  \
-        ca-certificates \
+        musl-utils \
     \
     && if [ "$TARGETPLATFORM" = "linux/386" ] ; then XARCH="x86" ; fi \
     && if [ "$TARGETPLATFORM" = "linux/amd64" ] ; then XARCH="amd64" ; fi \

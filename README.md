@@ -52,5 +52,3 @@ based on [peterforeman-deconz-socat](https://hub.docker.com/r/peterforeman/decon
 Based on [koenkk-zigbee2mqtt](https://hub.docker.com/r/koenkk/zigbee2mqtt/) image, [published on docker hub](https://hub.docker.com/r/koenkk/zigbee2mqtt).
 
 Based on [vladbabii/homeassistant-socat](https://hub.docker.com/r/vladbabii/homeassistant-socat).
-
-# zigbee2mqtt-socat
