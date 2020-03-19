@@ -23,4 +23,4 @@ else
 fi
 
 echo "starting... socat $PARAMS"
-exec socat $PARAMS &
+exec socat $PARAMS 

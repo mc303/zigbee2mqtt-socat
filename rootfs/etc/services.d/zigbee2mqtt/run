@@ -7,4 +7,4 @@ cd /app
 
 
 
-exec npm start &
+exec npm start 
