@@ -3,6 +3,12 @@ FROM koenkk/zigbee2mqtt:latest as base
 ARG TARGETPLATFORM
 RUN echo "TARGETPLATFORM : $TARGETPLATFORM"
 
+ENV LANG=C.UTF-8 \
+    S6_CMD_WAIT_FOR_SERVICES=1 \
+    S6_CMD_WAIT_FOR_SERVICES_MAXTIME=10000
+
+ARG S6_VERSION=v1.22.1.0    
+
 # Install socat
 RUN \
     apk add --no-cache --virtual .build-dependencies \
@@ -19,7 +25,7 @@ RUN \
     && if [ "$TARGETPLATFORM" = "linux/arm/v7" ] ; then XARCH="armhf" ; fi \
     && if [ "$TARGETPLATFORM" = "linux/arm64" ] ; then XARCH="aarch64" ; fi \
     \
-    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v1.22.1.0/s6-overlay-$XARCH.tar.gz" \
+    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/$S6_VERSION/s6-overlay-$XARCH.tar.gz" \
         | tar zxvf - -C / \
     \
     && mkdir -p /etc/fix-attrs.d \

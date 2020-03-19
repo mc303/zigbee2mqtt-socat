@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bash
+export S6_CMD_WAIT_FOR_SERVICES_MAXTIME=
 
 if [[ -z "${SOCAT_ZIGBEE_TYPE}" ]]; then
   SOCAT_ZIGBEE_TYPE="tcp"
